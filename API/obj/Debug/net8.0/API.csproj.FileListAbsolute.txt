@@ -5,16 +5,10 @@
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/API.runtimeconfig.json
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/API.dll
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/API.pdb
-/Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Microsoft.OpenApi.dll
-/Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.csproj.AssemblyReference.cache
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.GeneratedMSBuildEditorConfig.editorconfig
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.AssemblyInfoInputs.cache
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.AssemblyInfo.cs
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.csproj.CoreCompileInputs.cache
-/Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.MvcApplicationPartsAssemblyInfo.cs
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.MvcApplicationPartsAssemblyInfo.cache
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.sourcelink.json
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/staticwebassets.build.json
@@ -25,7 +19,6 @@
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.API.props
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/scopedcss/bundle/API.styles.css
-/Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.csproj.CopyComplete
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.dll
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/refint/API.dll
 /Users/terranadams/Desktop/NewSocialApp/API/obj/Debug/net8.0/API.pdb
