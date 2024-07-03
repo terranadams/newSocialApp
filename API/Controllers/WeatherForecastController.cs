@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-[ApiController]
+[ApiController] // This gives us features for writing less code with building APIs.
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
