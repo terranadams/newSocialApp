@@ -9,11 +9,13 @@ builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")); // hooking up a db
 });
+builder.Services.AddCors();
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline (where middleware gets executed and not just added)
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200"));
 app.MapControllers();
 
 app.Run();
