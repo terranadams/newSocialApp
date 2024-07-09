@@ -1,2 +1,18 @@
-<h1>{{users}}</h1>
+<h1>{{ title }}</h1>
 
+<ul>
+  <!-- this is the new way to do this -->
+  @for (user of users; track user.id) {
+  <li>
+    {{user.id}} - {{ user.userName }}
+  </li>
+  }
+</ul>
+
+<!-- this older method below requires us to import NgFor in the ts file and add it as an import -->
+
+<!-- <ul>
+  <li *ngFor="let user of users">
+    {{user.userName}}
+  </li>
+</ul> -->
