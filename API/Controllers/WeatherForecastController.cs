@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers; // Define the namespace that this controller is a part of.
 
 // Attributes that indicate this class is an API controller and sets up routing.
-[ApiController] // This attribute indicates that this class is an API Controller and enables MVC to infer certain behaviors.
-[Route("[controller]")] // This attribute sets the route for the API to match the controller's name (e.g. 'WeatherForecast').
-public class WeatherForecastController : ControllerBase
+// [ApiController] // This attribute indicates that this class is an API Controller and enables MVC to infer certain behaviors. This is now coming from BaseApiController
+// [Route("[controller]")] // This attribute sets the route for the API to match the controller's name (e.g. 'WeatherForecast'). This is now coming from BaseApiController
+public class WeatherForecastController : BaseApiController
 {
     private static readonly string[] Summaries = new[]
     {

@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 
 
-[ApiController]
-[Route("api/[controller]")] // 'controller' is going to be replaced with the first part of the class name (Users). localhost:5001/api/users 
-public class UsersController(DataContext context) : ControllerBase
+// [ApiController] // This is now coming from BaseApiController
+// [Route("api/[controller]")] // 'controller' is going to be replaced with the first part of the class name (Users). localhost:5001/api/users . This is now coming from BaseApiController
+public class UsersController(DataContext context) : BaseApiController
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() 
