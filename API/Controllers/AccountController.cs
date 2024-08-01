@@ -3,15 +3,16 @@ using System.Text;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-public class AccountController(DataContext context) : BaseApiController
+public class AccountController(DataContext context, ITokenService tokenService) : BaseApiController
 {
     [HttpPost("register")] // account/register
-    public async Task<ActionResult<AppUser>> Register(RegisterDTO registerDTO)
+    public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDTO)
     {
         if (await UserExists(registerDTO.Username)) return BadRequest("Username already taken");
 
@@ -27,11 +28,15 @@ public class AccountController(DataContext context) : BaseApiController
         context.Users.Add(user); // Add the new user to the database context.
         await context.SaveChangesAsync(); // Save the changes to the database asynchronously.
 
-        return user;
+        return new UserDto
+        {
+            Username = user.UserName,
+            Token = tokenService.CreateToken(user)
+        };
     }
 
     [HttpPost("login")]
-    public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+    public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         // Retrieve the user from the database based on the username.
         var user = await context.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
@@ -51,7 +56,11 @@ public class AccountController(DataContext context) : BaseApiController
             if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
         }
 
-        return user;
+        return new UserDto
+        {
+            Username = user.UserName,
+            Token = tokenService.CreateToken(user)
+        };
     }
 
     private async Task<bool> UserExists(string username) // Define a private helper method to check if a user exists based on the username.
