@@ -1,15 +1,21 @@
 <app-nav></app-nav>
 
-<div class="container" style="margin-top: 100px;">
-  <ul>
-    <!-- this is the new way to do this -->
-    @for (user of users; track user.id) {
-    <li>{{ user.id }} - {{ user.userName }}</li>
-    }
-  </ul>
-</div>
-<!-- this older method below requires us to import NgFor in the ts file and add it as an import -->
 
+<div class="container" style="margin-top: 100px;">
+  <app-home></app-home>
+</div>
+
+
+<!-- <div class="container" style="margin-top: 100px;"> -->
+  <!-- <ul> -->
+    <!-- this is the new way to do this -->
+    <!-- @for (user of users; track user.id) { -->
+    <!-- <li>{{ user.id }} - {{ user.userName }}</li> -->
+    <!-- } -->
+  <!-- </ul> -->
+<!-- </div> -->
+
+<!-- this older method below requires us to import NgFor in the ts file and add it as an import -->
 <!-- <ul>
   <li *ngFor="let user of users">
     {{user.userName}}
