@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
@@ -13,13 +12,9 @@ import { HomeComponent } from "./home/home.component";
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  http = inject(HttpClient); // new way of injecting without constructor
   private accountService = inject(AccountService)
-  title = 'New Social App';
-  users: any;
 
   ngOnInit(): void {
-    this.getUsers();
     this.setCurrentUser();
   }
 
@@ -30,11 +25,5 @@ export class AppComponent implements OnInit {
     this.accountService.currentUser.set(user);
   }
 
-  getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe({
-      next: (res) => (this.users = res),
-      error: (error) => console.log(error),
-      complete: () => console.log('Request has completed :)'),
-    });
-  }
+
 }
