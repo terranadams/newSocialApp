@@ -6,7 +6,7 @@ public interface IUserRepository
 {
     void Update(AppUser user);
     Task<bool> SaveAllAsync(); // when we save our changes to the db, we get a boolean to verify success 
-    Task<IEnumerable<AppUser>> GetUserAsync();
+    Task<IEnumerable<AppUser>> GetUsersAsync();
     Task<AppUser?> GetUserByIdAsync(int Id); 
 
     Task<AppUser?> GetUserByUsernameAsync(string username);
