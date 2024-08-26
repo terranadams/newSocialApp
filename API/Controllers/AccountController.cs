@@ -15,24 +15,25 @@ public class AccountController(DataContext context, ITokenService tokenService) 
     public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDTO)
     {
         if (await UserExists(registerDTO.Username)) return BadRequest("Username already taken");
+        return Ok();
 
-        using var hmac = new HMACSHA512(); // Create a new instance of HMACSHA512 to hash the password.
+        // using var hmac = new HMACSHA512(); // Create a new instance of HMACSHA512 to hash the password.
 
-        var user = new AppUser // Create a new user with the hashed password and salt.
-        {
-            UserName = registerDTO.Username.ToLower(),
-            PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)), // Compute the hash of the password.
-            PasswordSalt = hmac.Key // Save the key (salt) used in the hashing algorithm.
-        };
+        // var user = new AppUser 
+        // {
+        //     UserName = registerDTO.Username.ToLower(),
+        //     PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password)), // Compute the hash of the password.
+        //     PasswordSalt = hmac.Key // Save the key (salt) used in the hashing algorithm.
+        // };
 
-        context.Users.Add(user); // Add the new user to the database context.
-        await context.SaveChangesAsync(); // Save the changes to the database asynchronously.
+        // context.Users.Add(user); // Add the new user to the database context.
+        // await context.SaveChangesAsync(); // Save the changes to the database asynchronously.
 
-        return new UserDto
-        {
-            Username = user.UserName,
-            Token = tokenService.CreateToken(user)
-        };
+        // return new UserDto
+        // {
+        //     Username = user.UserName,
+        //     Token = tokenService.CreateToken(user)
+        // };
     }
 
     [HttpPost("login")]
