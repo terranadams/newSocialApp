@@ -1,4 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace API.Entities;
+
+[Table("Photos")]
 
 public class Photo
 {
@@ -6,4 +10,8 @@ public class Photo
     public required string Url { get; set; }
     public bool IsMain { get; set; }
     public string? PublicId { get; set; }
+
+    // Navigation properties - this is how we set up a required one-to-many table relationship 
+    public int AppUserId { get; set; }
+    public AppUser AppUser { get; set; } = null!;
 }
