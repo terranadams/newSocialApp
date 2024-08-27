@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EIDAjFdnI+g=",
+  "dgSpecHash": "8Jw8pgHjxZ0=",
   "success": true,
-  "projectFilePath": "/Users/terranadams/Desktop/NewSocialApp/API/API.csproj",
+  "projectFilePath": "/Users/terranadams/Desktop/newSocialApp/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/terranadams/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/terranadams/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

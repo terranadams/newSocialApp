@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/terranadams/Desktop/NewSocialApp/API/API.csproj": {}
+    "/Users/terranadams/Desktop/newSocialApp/API/API.csproj": {}
   },
   "projects": {
-    "/Users/terranadams/Desktop/NewSocialApp/API/API.csproj": {
+    "/Users/terranadams/Desktop/newSocialApp/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/terranadams/Desktop/NewSocialApp/API/API.csproj",
+        "projectUniqueName": "/Users/terranadams/Desktop/newSocialApp/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/terranadams/Desktop/NewSocialApp/API/API.csproj",
+        "projectPath": "/Users/terranadams/Desktop/newSocialApp/API/API.csproj",
         "packagesPath": "/Users/terranadams/.nuget/packages/",
-        "outputPath": "/Users/terranadams/Desktop/NewSocialApp/API/obj/",
+        "outputPath": "/Users/terranadams/Desktop/newSocialApp/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/terranadams/.nuget/NuGet/NuGet.Config"
