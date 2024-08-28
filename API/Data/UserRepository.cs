@@ -52,4 +52,9 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
             .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();
     }
+
+    public Task GetUserByUsernameAsync(object useranme)
+    {
+        throw new NotImplementedException();
+    }
 }
