@@ -1,4 +1,10 @@
-import { Component, HostListener, inject, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Member } from '../../_models/member';
 import { AccountService } from '../../_services/account.service';
 import { MembersService } from '../../_services/members.service';
@@ -11,11 +17,12 @@ import { ToastrService } from 'ngx-toastr';
   standalone: true,
   imports: [TabsModule, FormsModule],
   templateUrl: './member-edit.component.html',
-  styleUrl: './member-edit.component.css'
+  styleUrl: './member-edit.component.css',
 })
 export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') editForm?: NgForm; // this gets the form from the template (could be undefined at first)
-  @HostListener('window:beforeunload', ['$event']) notify($event:any) { // this is how we access browser events ("Leave Site? Changes you made may not be saved. ")
+  @HostListener('window:beforeunload', ['$event']) notify($event: any) {
+    // this is how we access browser events ("Leave Site? Changes you made may not be saved. ")
     if (this.editForm?.dirty) {
       $event.returnValue = true;
     }
@@ -24,7 +31,7 @@ export class MemberEditComponent implements OnInit {
   member?: Member;
   private accountService = inject(AccountService);
   private memberService = inject(MembersService);
-  private toastr = inject(ToastrService)
+  private toastr = inject(ToastrService);
 
   ngOnInit(): void {
     this.loadMember();
@@ -34,13 +41,16 @@ export class MemberEditComponent implements OnInit {
     const user = this.accountService.currentUser();
     if (!user) return;
     this.memberService.getMember(user.username).subscribe({
-      next: member => this.member = member
-    })
+      next: (member) => (this.member = member),
+    });
   }
 
   updateMember() {
-    console.log(this.member)
-    this.toastr.success('Profile updated successfully')
-    this.editForm?.reset(this.member);
+    this.memberService.updateMember(this.editForm?.value).subscribe({
+      next: () => {
+        this.toastr.success('Profile updated successfully');
+        this.editForm?.reset(this.member);
+      },
+    });
   }
 }
