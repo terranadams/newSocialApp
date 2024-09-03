@@ -28,7 +28,7 @@ export class MembersService {
   updateMember(member: Member) {
     return this.http.put(this.baseUrl + 'users', member).pipe(
       tap(() => this.members.update(members => members.map(m => m.userName === member.userName ? member : m)))
-      // we're mapping through our members array, and replacing whichever one has a matching username, anything listening to the 'members' signal will get updated
+      // while the API call goes out to update the database, we're mapping through our members array, and replacing whichever one has a matching username with the new updated instance, anything listening to the 'members' signal will get updated
     )
   }
 }
