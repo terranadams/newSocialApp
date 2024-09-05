@@ -131,3 +131,5 @@
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/Data/UserSeedData.json
 /Users/terranadams/Desktop/NewSocialApp/API/bin/Debug/net8.0/AutoMapper.dll
+/Users/terranadams/Desktop/newSocialApp/API/bin/Debug/net8.0/CloudinaryDotNet.dll
+/Users/terranadams/Desktop/newSocialApp/API/bin/Debug/net8.0/Newtonsoft.Json.dll
