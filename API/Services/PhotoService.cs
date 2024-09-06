@@ -34,7 +34,8 @@ public class PhotoService : IPhotoService
         return uploadResult;
     }
 
-    public async Task<DeletionResult> DeletePhotoAsyhc(string publicId)
+
+    public async Task<DeletionResult> DeletePhotoAsync(string publicId)
     {
         var deleteParams = new DeletionParams(publicId);
 
