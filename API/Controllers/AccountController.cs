@@ -40,7 +40,9 @@ public class AccountController(DataContext context, ITokenService tokenService) 
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
         // Retrieve the user from the database based on the username.
-        var user = await context.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
+        var user = await context.Users
+            .Include(p => p.Photos)
+            .FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
 
         // If the user is not found, return an Unauthorized response.
         if (user == null) return Unauthorized("Invalid username or password");
@@ -60,13 +62,14 @@ public class AccountController(DataContext context, ITokenService tokenService) 
         return new UserDto
         {
             Username = user.UserName,
-            Token = tokenService.CreateToken(user)
+            Token = tokenService.CreateToken(user),
+            PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
         };
     }
 
     private async Task<bool> UserExists(string username) // Define a private helper method to check if a user exists based on the username.
     {
         // Check if any user in the database matches the provided username (case-insensitive).
-        return await context.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower()); 
+        return await context.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());
     }
 }
